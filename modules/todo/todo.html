@@ -1,0 +1,33 @@
+<br>
+    Item name: <input type="text" ng-model="submitItem" required> {{submitItem}}
+    <button type="button" ng-click="submit()">Submit</button>
+    {{itemList}}
+    </br>
+    All items:
+    <div ng-repeat="item in itemList track by $index">
+        <input type="checkbox" ng-model="checkedBox"> {{item}}
+        <div ng-if="checkedBox" style="display: inline">
+            <button type="button" ng-click="finish(item)" >Finish</button>
+            <button type="button" ng-click="delete(item)" >Delete</button>
+        </div>
+    </div>
+    </br></br>
+    In progress:
+    <div ng-repeat="item in inProgress track by $index">
+        <input type="checkbox" ng-model="checkedBox"> {{item}}
+        <div ng-if="checkedBox" style="display: inline">
+            <button type="button" ng-click="finish(item)" >Finish</button>
+            <button type="button" ng-click="delete(item)" >Delete</button>
+        </div>
+    </div>
+
+    </br></br>
+    Finished:
+    <div ng-repeat="item in finished track by $index">
+        <input type="checkbox" ng-model="checkedBox"> {{item}}
+        <div ng-if="checkedBox" style="display: inline">
+            <button type="button" ng-click="notYet(item)" >Not Yet</button>
+            <button type="button" ng-click="delete(item)" >Delete</button>
+        </div>
+    </div>
+</div>
